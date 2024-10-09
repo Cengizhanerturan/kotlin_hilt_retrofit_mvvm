@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.example.hiltmvvm.view.PostsFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts">
+        <action
+            android:id="@+id/action_postsFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.hiltmvvm.view.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos" />
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.hiltmvvm.view.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_usersFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.hiltmvvm.view.UserDetailsFragment"
+        android:label="UserDetailsFragment">
+        <argument
+            android:name="user"
+            app:argType="com.example.hiltmvvm.core.model.Users" />
+        <action
+            android:id="@+id/action_userDetailsFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.example.hiltmvvm.view.PostDetailsFragment"
+        android:label="PostDetailsFragment">
+        <argument
+            android:name="post"
+            app:argType="com.example.hiltmvvm.core.model.Posts" />
+    </fragment>
+</navigation>

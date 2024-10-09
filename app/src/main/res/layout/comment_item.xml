@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="comment"
+            type="com.example.hiltmvvm.core.model.Comments" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/card_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{comment.email}"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{comment.body}"
+            android:textStyle="normal"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</layout>
